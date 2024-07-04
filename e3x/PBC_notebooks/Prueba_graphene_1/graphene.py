@@ -21,8 +21,8 @@ import optax
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
-#graphene_idxs = read('C:/Users/diego/e3x_PBC/e3x/PBC_notebooks/Prueba_graphene_1/geometry100.in')
-graphene_idxs = read('geometry100.in')
+graphene_idxs = read(filename = "C:\Users\brian\e3x_pbc\e3x\PBC_notebooks\Graphene_7x7_MD.DFT.MD.500K.PBE.SuperCell_7x7.01.DATA4231.npz")
+#graphene_idxs = read('geometry100.in')
 
 def prepare_datasets(filename,key, num_train, num_valid):
   # Load the dataset.
@@ -369,15 +369,15 @@ num_basis_functions = 16
 cutoff = 6.0
 
 # Training hyperparameters.
-num_train = 3
-num_valid = 3
+num_train = 20
+num_valid = 10
 num_epochs = 10
 learning_rate = 0.001
 forces_weight = 1.0
-batch_size = 1
+batch_size = 5
 
-#filename = "C:/Users/diego/e3x_PBC/e3x/PBC_notebooks/Prueba_graphene_1/graphene_prueba.npz"
-filename = 'Graphene_7x7_MD.DFT.MD.500K.PBE.SuperCell_7x7.01.DATA4231.npz'
+filename = "C:\Users\brian\e3x_pbc\e3x\PBC_notebooks\Graphene_7x7_MD.DFT.MD.500K.PBE.SuperCell_7x7.01.DATA4231.npz"
+#filename = 'Graphene_7x7_MD.DFT.MD.500K.PBE.SuperCell_7x7.01.DATA4231.npz'
 
 # Verifica si el archivo existe usando la ruta
 if os.path.exists(filename):
